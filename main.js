@@ -40,9 +40,11 @@ if (num<26){
         sound((notes[num]), time[num])
 
         if(notes[num]==0){
-            document.getElementById('bar').style.height = (200 + 'px')
+            document.getElementById('bar1').style.height = (200 + 'px')
+            document.getElementById('bar1').style.transform = ('translateY(' + -200 + 'px)')
         }else{
-            document.getElementById('bar').style.height = (notes[num]+ 'px') //----
+            document.getElementById('bar1').style.height = ((notes[num])+ 'px') //----
+            document.getElementById('bar1').style.transform = ('translateY(' + -1*(notes[num])+ 'px)' )
         }
         num = num+1  
         console.log(time[num])
@@ -87,8 +89,8 @@ var notes = {
     27: 391.9,
     28: 440,
     29: 0,
-
 }
+
 var time = {
     1: 246,
     2: 492,
