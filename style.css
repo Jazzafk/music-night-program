@@ -7,9 +7,15 @@ button{
 #container{
     width: 100%;
     height:98vh;
-    background-color: plum;
     margin: auto;
     text-align: center;
     vertical-align: middle;
     
+}
+#bar{
+   width: 20px; 
+   height: 400px;
+   background-color: blueviolet;
+   margin: auto;
+   vertical-align: middle;
 }

@@ -38,6 +38,12 @@ function repeateSound(){
 if (num<26){
     var timeOut = setTimeout(()=>{
         sound((notes[num]), time[num])
+
+        if(notes[num]==0){
+            document.getElementById('bar').style.height = (200 + 'px')
+        }else{
+            document.getElementById('bar').style.height = (notes[num]+ 'px') //----
+        }
         num = num+1  
         console.log(time[num])
         console.log('repeating')
