@@ -3,6 +3,11 @@ var stopBtn = document.getElementById('stop')
 var start2 = document.getElementById('start2')
 num = 1;
 
+document.getElementById('reset').addEventListener('click' ,function(){
+location.reload()
+})
+
+
 function sound(frequency, time){
     console.log('f =' + frequency)
 
@@ -22,11 +27,7 @@ var timeout = setTimeout(()=>{
 
 },time)
 
-
 }
-
-
-
 
 startBtn.addEventListener('click', function(){
    repeateSound()
@@ -35,7 +36,7 @@ startBtn.addEventListener('click', function(){
 
 function repeateSound(){
 
-if (num<26){
+if (num<30){
     var timeOut = setTimeout(()=>{
         sound((notes[num]), time[num])
 
@@ -77,8 +78,6 @@ var multipliers = {
     20: 0.1,
 }
 
-
-
 function moveBars(baseFreq){
 
     for (i=1; i<21; i++){
@@ -92,13 +91,13 @@ if(baseFreq==0){
     document.getElementById(barRef).style.height = ((baseFreq*multipliers[i])+ 'px') //----
     document.getElementById(barRef).style.transform = ('translateY(' + -1*(baseFreq*multipliers[i])+ 'px)' )
 }
-    }
-
+     }
 }
 
+var p = 0;
 
 var notes = {
-    1: 0,
+    1: p,
     2: 440,
     3: 293.6,
     4: 329.6,
@@ -106,27 +105,27 @@ var notes = {
     6: 349.2,
     7: 329.6, // 
     8: 329.6,
-    9: 0,
+    9: p,
     10: 329.6,
-    11: 0,
+    11: p,
     12: 329.6,
     13: 293.6,
     14: 293.6,
     15: 261.6,// 
     16: 261.6,
-    17: 0,
+    17: p,
     18: 261.6,
     19: 0,
     20: 293.6,
     21: 391.9,
     22: 440,
-    23: 0,
-    24: 0,
-    25: 0,
+    23: p,
+    24: p,
+    25: p,
     26: 293.6,
     27: 391.9,
     28: 440,
-    29: 0,
+    29: p,
 }
 
 var time = {
@@ -159,9 +158,4 @@ var time = {
     27: 369,
     28: 492,
     29: 123,
-
-   
-
-
-
 }
