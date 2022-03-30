@@ -39,13 +39,8 @@ if (num<26){
     var timeOut = setTimeout(()=>{
         sound((notes[num]), time[num])
 
-        if(notes[num]==0){
-            document.getElementById('bar1').style.height = (200 + 'px')
-            document.getElementById('bar1').style.transform = ('translateY(' + -200 + 'px)')
-        }else{
-            document.getElementById('bar1').style.height = ((notes[num])+ 'px') //----
-            document.getElementById('bar1').style.transform = ('translateY(' + -1*(notes[num])+ 'px)' )
-        }
+    moveBars(notes[num])
+
         num = num+1  
         console.log(time[num])
         console.log('repeating')
@@ -58,6 +53,49 @@ else{
 }
 
 }
+
+var multipliers = {
+    1: 0.2,
+    2: 0.4,
+    3: 0.6,
+    4: 0.8,
+    5: 1,
+    6: 0.8,
+    7: 0.6,
+    8: 0.4,
+    9: 0.2,
+    10: 0.1,
+    11: 0.2,
+    12: 0.4,
+    13: 0.6,
+    14: 0.8,
+    15: 1,
+    16: 0.8,
+    17: 0.6,
+    18: 0.4,
+    19: 0.2,
+    20: 0.1,
+}
+
+
+
+function moveBars(baseFreq){
+
+    for (i=1; i<21; i++){
+
+        barRef= ('bar'+i)
+
+if(baseFreq==0){
+    document.getElementById(barRef).style.height = (200 + 'px')
+    document.getElementById(barRef).style.transform = ('translateY(' + -200 + 'px)')
+}else{
+    document.getElementById(barRef).style.height = ((baseFreq*multipliers[i])+ 'px') //----
+    document.getElementById(barRef).style.transform = ('translateY(' + -1*(baseFreq*multipliers[i])+ 'px)' )
+}
+    }
+
+}
+
 
 var notes = {
     1: 0,

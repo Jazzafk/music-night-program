@@ -12,15 +12,201 @@ button{
     vertical-align: middle;
 
 }
-    
+body{
+   background-color: #28282B ;
+}
 
 #bar1{
    width: 20px; 
    height: 200px;
-   background-color: blueviolet;
+   background-color:#200589;
    margin: 100px;
-   position: relative;
-   top: 200px;
+   position: absolute;
+   left: 100px;
+   top: 700px;
    transition: all 0.5s;
   
+} #bar2{
+   width: 20px; 
+   height: 200px;
+   background-color: #7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 150px;
+   top: 700px;
+   transition: all 0.5s;
+  
+} #bar3{
+   width: 20px; 
+   height: 200px;
+   background-color: #200589;
+   margin: 100px;
+   position: absolute;
+   left: 200px;
+   top: 700px;
+   transition: all 0.5s;
+  
+} #bar4{
+   width: 20px; 
+   height: 200px;
+   background-color: #7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 250px;
+   top: 700px;
+   transition: all 0.5s;
+  
+} #bar5{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 300px;
+   top: 700px;
+   transition: all 0.5s;
+  
+}  #bar6{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 350px;
+   top: 700px;
+   transition: all 0.5s;
+  
+}  #bar7{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 400px;
+   top: 700px;
+   transition: all 0.5s;
+}  #bar8{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 450px;
+   top: 700px;
+   transition: all 0.5s;
+  
+}  #bar9{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 500px;
+   top: 700px;
+   transition: all 0.5s;
+  
+}  #bar10{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 550px;
+   top: 700px;
+   transition: all 0.5s;
+}  
+   #bar11{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 600px;
+   top: 700px;
+   transition: all 0.5s;
 } 
+ #bar12{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 650px;
+   top: 700px;
+   transition: all 0.5s;
+}  
+#bar13{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 700px;
+   top: 700px;
+   transition: all 0.5s;
+}  
+#bar14{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 750px;
+   top: 700px;
+   transition: all 0.5s;
+}  
+#bar15{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 800px;
+   top: 700px;
+   transition: all 0.5s;
+}  #bar16{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 850px;
+   top: 700px;
+   transition: all 0.5s;
+}  #bar17{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 900px;
+   top: 700px;
+   transition: all 0.5s;
+} #bar18{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 950px;
+   top: 700px;
+   transition: all 0.5s;
+} #bar19{
+   width: 20px; 
+   height: 200px;
+   background-color:#200589;
+   margin: 100px;
+   position: absolute;
+   left: 1000px;
+   top: 700px;
+   transition: all 0.5s;
+}  #bar20{
+   width: 20px; 
+   height: 200px;
+   background-color:#7d12ff;
+   margin: 100px;
+   position: absolute;
+   left: 1050px;
+   top: 700px;
+   transition: all 0.5s;
+}
