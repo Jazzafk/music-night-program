@@ -7,7 +7,6 @@ document.getElementById('reset').addEventListener('click' ,function(){
 location.reload()
 })
 
-
 function sound(frequency, time){
     console.log('f =' + frequency)
 
@@ -76,11 +75,24 @@ var multipliers = {
     18: 0.4,
     19: 0.2,
     20: 0.1,
+
+    21: 0.2,
+    22: 0.4,
+    23: 0.6,
+    24: 0.8,
+
+    25: 1,
+    26: 0.8,
+    27: 0.6,
+    28: 0.4,
+    29: 0.2,
 }
 
 function moveBars(baseFreq){
 
-    for (i=1; i<21; i++){
+    document.getElementById('freq').innerHTML = baseFreq + 'Hz'
+
+    for (i=1; i<30; i++){
 
         barRef= ('bar'+i)
 
@@ -94,10 +106,43 @@ if(baseFreq==0){
      }
 }
 
-var p = 0;
+var pause = 0;
+var c4 = 261.63;
+var d4 = 293.66;
+var e4 = 329.63;
+var f4 = 329.63;
+var g4 = 392.00;
+var a4 = 440.00;
+var b4 = 493.88;
+var c5 = 523.25;
+var d5 = 587.33;
+var e5 = 659.25;
+var f5 = 698.46;
+var g5 = 783.99;
+var a5 = 880;
+var b5 = 887.77
+var c6 = 1046.50
+
+var qn = 492;
+var dqn = 738;
+var en = 246;
+var den = 369;
+var sn = 123;
+var dsn = 184;
+
+var sp = 492;
+dp1 = 246;
+dp2 = 123;
+dp3 = 61;
+
+
+
+
+
+
 
 var notes = {
-    1: p,
+    1: pause,
     2: 440,
     3: 293.6,
     4: 329.6,
@@ -105,57 +150,56 @@ var notes = {
     6: 349.2,
     7: 329.6, // 
     8: 329.6,
-    9: p,
+    9: pause,
     10: 329.6,
-    11: p,
+    11: pause,
     12: 329.6,
     13: 293.6,
     14: 293.6,
     15: 261.6,// 
     16: 261.6,
-    17: p,
+    17: pause,
     18: 261.6,
     19: 0,
     20: 293.6,
     21: 391.9,
     22: 440,
-    23: p,
-    24: p,
-    25: p,
+    23: pause,
+    24: pause,
+    25: pause,
     26: 293.6,
     27: 391.9,
     28: 440,
-    29: p,
+    29: pause,
 }
 
 var time = {
-    1: 246,
-    2: 492,
-    3: 492,
-    4: 492,
-    5: 492,
-    6: 738,
-    7: 492,//
-    8: 123,
-    9: 123,
-    10: 246,
-    11: 246,
-    12: 246,
-    13: 482,
-    14: 738,
-    15: 492,//
-    16: 123,
-    17: 123,
-    18: 246,
-    19: 246,
-    20: 246,
-    21: 369,
-    22: 492,
-    23: 123,
-    24: 492,
-    25: 246,
-    26: 246,
-    27: 369,
-    28: 492,
-    29: 123,
+    1: dp1,
+    2: en,
+    3: en,
+    4: en,
+    5: qn,
+    6: den,
+    7: sn,//
+    8: sn,
+    9: dp2,
+    10: en,
+    11: dp1,
+    12: en,
+    13: qn,
+    14: den,
+    15: sn,//
+    16: dp2,
+    17: en,
+    18: dp1,
+    19: en,
+    20: den,
+    21: qn,
+    22: dp2,
+    23: sp,
+    24: dp1,
+    25: en,
+    26: den,
+    27: qn,
+    28: dp2,
 }
