@@ -107,33 +107,33 @@ if(baseFreq==0){
 }
 
 var pause = 0;
-var c4 = 261.63;
+var c4 = 277.18;
 var d4 = 293.66;
 var e4 = 329.63;
-var f4 = 329.63;
+var f4 = 369.99;
 var g4 = 392.00;
 var a4 = 440.00;
+var a4s = 466.16;
 var b4 = 493.88;
-var c5 = 523.25;
+var c5 = 554.37;
 var d5 = 587.33;
 var e5 = 659.25;
-var f5 = 698.46;
+var f5 = 739.99;
 var g5 = 783.99;
 var a5 = 880;
-var b5 = 887.77
-var c6 = 1046.50
+var a5s = 932.33;
+var b5 = 887.77;
+var c6 = 1108.73;
 
-var qn = 492;
-var dqn = 738;
-var en = 246;
-var den = 369;
-var sn = 123;
-var dsn = 184;
+var wn = 1558.44156;
+var dwn = wn*1.5;
+var qn = wn/4;
+var dqn = qn*1.5;
+var en = wn/8;
+var den = en*8.5;
+var sn = wn/16;
+var dsn = sn*1.5;
 
-var sp = 492;
-dp1 = 246;
-dp2 = 123;
-dp3 = 61;
 
 
 
@@ -173,33 +173,43 @@ var notes = {
     29: pause,
 }
 
-var time = {
-    1: dp1,
-    2: en,
-    3: en,
-    4: en,
-    5: qn,
-    6: den,
-    7: sn,//
-    8: sn,
-    9: dp2,
-    10: en,
-    11: dp1,
-    12: en,
-    13: qn,
-    14: den,
-    15: sn,//
-    16: dp2,
-    17: en,
-    18: dp1,
-    19: en,
-    20: den,
-    21: qn,
-    22: dp2,
-    23: sp,
-    24: dp1,
-    25: en,
-    26: den,
-    27: qn,
-    28: dp2,
-}
+// var time = {
+//     1: dp1,
+//     2: en,
+//     3: en,
+//     4: en,
+//     5: qn,
+//     6: den,
+//     7: sn,//
+//     8: sn,
+//     9: dp2,
+//     10: en,
+//     11: dp1,
+//     12: en,
+//     13: qn,
+//     14: den,
+//     15: sn,//
+//     16: dp2,
+//     17: en,
+//     18: dp1,
+//     19: en,
+//     20: den,
+//     21: qn,
+//     22: dp2,
+//     23: sp,
+//     24: dp1,
+//     25: en,
+//     26: den,
+//     27: qn,
+//     28: dp2,
+// }
+
+
+document.getElementById('btn').addEventListener('click', function(){
+  
+    document.getElementById('parentDiv').style.animation = "reveal 0.9s 0.9s"
+    
+    document.getElementById('parentDiv').style.animation = "slidein 1s 1s"
+     
+     
+   })
