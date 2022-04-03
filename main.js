@@ -7,55 +7,61 @@ document.getElementById('reset').addEventListener('click' ,function(){
 location.reload()
 })
 
-function sound(frequency, time){
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-audioCtx = new(window.AudioContext || window.webkitAudioContext)();
-var oscillator = audioCtx.createOscillator();
-var g = audioCtx.createGain()
-oscillator.connect(g)
-oscillator.type = 'sine'
-oscillator.frequency.value = frequency;
-g.connect(audioCtx.destination);
-oscillator.start()
+var audioContext = new AudioContext();
+var nextNotetime = audioContext.currentTime;
 
-var timeout = setTimeout(()=>{
+function repeat() {
 
-    g.gain.setTargetAtTime(0, audioCtx.currentTime, 0.02);
-    // oscillator.stop()
-
-},time)
-
-}
-
-startBtn.addEventListener('click', function(){
- // background()
-var time = setTimeout(()=>{ //sync music with background
-    repeateSound()
-},4100)
-   
-})
-
-
-function repeateSound(){
-
-if (num<88){
+    if(num<88) {
     var timeOut = setTimeout(()=>{
-
         sound((notes[num]), time[num])
-       // document.getElementById('words').innerHTML = (lyrics[num]) //lyrics bar set
-        moveWords()
-console.log(num)
-    moveBars(notes[num])
-        num = num+1  
-        repeateSound()
-    },time[num-1])
+        moveBars(notes[num])
+        moveWords(num)
+            num = num+1  
+            repeat()
+            },time[num-1])
+    }
 }
-else{
-    console.log('stoped')
-    //clearInterval(interval)
+function sound(frequency, time) {
+    var oscillator = audioContext.createOscillator();
+    var g = audioContext.createGain()
+    oscillator.connect(g)
+    oscillator.type = 'sine'
+    oscillator.frequency.value = frequency;
+    g.connect(audioContext.destination);
+    oscillator.start()
+    
+    var timeout = setTimeout(()=>{
+        g.gain.setTargetAtTime(0, audioContext.currentTime, 0.003);
+    },time)
+    
+  };
+
+  startBtn.addEventListener('click', function() {
+    repeat();
+//    var time = setTimeout(()=>{//BACKGROUND
+//     background()
+// },2000)
+  }, false)
+
+
+  function moveBars(baseFreq){
+    document.getElementById('freq').innerHTML = baseFreq + 'Hz'
+
+    for (i=1; i<30; i++){
+        barRef= ('bar'+i)
+
+if(baseFreq==0){
+    document.getElementById(barRef).style.height = (200 + 'px')
+    document.getElementById(barRef).style.transform = ('translateY(' + -200 + 'px)')
+}else{
+    document.getElementById(barRef).style.height = ((baseFreq*multipliers[i])+ 'px') //----
+    document.getElementById(barRef).style.transform = ('translateY(' + -1*(baseFreq*multipliers[i])+ 'px)' )
+}}
 }
 
-}
 
 var multipliers = {
     1: 0.2,
@@ -89,21 +95,6 @@ var multipliers = {
     27: 0.6,
     28: 0.4,
     29: 0.2,
-}
-
-function moveBars(baseFreq){
-    document.getElementById('freq').innerHTML = baseFreq + 'Hz'
-
-    for (i=1; i<30; i++){
-        barRef= ('bar'+i)
-
-if(baseFreq==0){
-    document.getElementById(barRef).style.height = (200 + 'px')
-    document.getElementById(barRef).style.transform = ('translateY(' + -200 + 'px)')
-}else{
-    document.getElementById(barRef).style.height = ((baseFreq*multipliers[i])+ 'px') //----
-    document.getElementById(barRef).style.transform = ('translateY(' + -1*(baseFreq*multipliers[i])+ 'px)' )
-}}
 }
 
 var pause = 0;
@@ -344,22 +335,36 @@ var time = {
 
 
 var element = document.getElementById("words");
+num2 = 0
 
-var btn = document.getElementById("btn");
-
-
-function moveWords(){
+function moveWords(pos){
   
-  element.classList.remove("run-animation");
- 
-  void element.offsetWidth;
-  
-  element.classList.add("run-animation");
+    if(pos<2) {
+        element.innerHTML ='Enemy by Imagine Dragons'
+      
+    }
+    else if (pos<6){
+element.innerHTML ='From Arcane'
+
+    }
+    else{
+    element.innerHTML = lyrics[num2]
+num2 = num2 + 1
+    }
 };
 
 
-var lyrics = ["I" ,"wake", "up" ,"to" ,"the" ,'sounds' ,"of", 'the', "silence", 'that', "allows",
-    "For", "my", "mind" ,"to","run", "around" ]
+var lyrics = ["I" ,"wake up" ,"to" ,"the" ,'sounds' ,"of", 'the', "silence","silence", 'that', "allows","allows",
+    "For", "my", "mind" ,"to","run", "around","around", "with", "my", "ear", "up", "to", "the","ground",
+    "I'm", "searching","searching", "to", "behold","behold", "the", 'stories','stories', 'that', 'are', "told",'When', "my", "back", "is", 
+    "to", 'the', "world", "that", "was", "smiling","smiling", "when", "I", "turned.", //good
+    'They', "tell","you", "you're", "the", "greatest","greatest",
+    "But", "once","you", "turn", "they", "hate","hate", "us",//good
+    "Oh,","Oh,", "the", "misery","misery","misery",
+    "Everybody", "Everybody","Everybody", "Everybody","wants", "to", 'be', "my", "enemy",
+    "Spare", "the", "sympathy",
+    "Everybody", "wants", "to", 'be', "my", "enemy",]
+    
 
 
 

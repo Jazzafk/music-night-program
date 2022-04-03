@@ -308,7 +308,7 @@ body{
 
 
 
-@keyframes my-animation {     
+/* @keyframes my-animation {     
    from {
       top: -510px;
      left : -100px;
@@ -318,15 +318,16 @@ body{
      left : 0;
    }      
  }
-/*  
+ 
  .run-animation {
    position: relative;
    animation: my-animation 0.5s ease;
  }
- 
+  */
  #words {
+    color: #7d12ff;
    position: relative;
    top:-500px;
    text-align: center;
    font-family : Palatino Linotype, Book Antiqua, Palatino, serif;
- } */
+ }
