@@ -8,7 +8,6 @@ location.reload()
 })
 
 function sound(frequency, time){
-    console.log('f =' + frequency)
 
 audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 var oscillator = audioCtx.createOscillator();
@@ -21,35 +20,39 @@ oscillator.start()
 
 var timeout = setTimeout(()=>{
 
-    g.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
-    //oscillator.stop()
+    g.gain.setTargetAtTime(0, audioCtx.currentTime, 0.02);
+    // oscillator.stop()
 
 },time)
 
 }
 
 startBtn.addEventListener('click', function(){
-   repeateSound()
+ // background()
+var time = setTimeout(()=>{ //sync music with background
+    repeateSound()
+},4100)
+   
 })
 
 
 function repeateSound(){
 
-if (num<30){
+if (num<88){
     var timeOut = setTimeout(()=>{
+
         sound((notes[num]), time[num])
-
+       // document.getElementById('words').innerHTML = (lyrics[num]) //lyrics bar set
+        moveWords()
+console.log(num)
     moveBars(notes[num])
-
         num = num+1  
-        console.log(time[num])
-        console.log('repeating')
         repeateSound()
-    },time[num])
+    },time[num-1])
 }
 else{
     console.log('stoped')
-    clearInterval(interval)
+    //clearInterval(interval)
 }
 
 }
@@ -89,11 +92,9 @@ var multipliers = {
 }
 
 function moveBars(baseFreq){
-
     document.getElementById('freq').innerHTML = baseFreq + 'Hz'
 
     for (i=1; i<30; i++){
-
         barRef= ('bar'+i)
 
 if(baseFreq==0){
@@ -102,31 +103,50 @@ if(baseFreq==0){
 }else{
     document.getElementById(barRef).style.height = ((baseFreq*multipliers[i])+ 'px') //----
     document.getElementById(barRef).style.transform = ('translateY(' + -1*(baseFreq*multipliers[i])+ 'px)' )
-}
-     }
+}}
 }
 
 var pause = 0;
-var c4 = 277.18;
-var d4 = 293.66;
-var e4 = 329.63;
-var f4 = 369.99;
-var g4 = 392.00;
-var a4 = 440.00;
-var a4s = 466.16;
-var b4 = 493.88;
-var c5 = 554.37;
-var d5 = 587.33;
-var e5 = 659.25;
-var f5 = 739.99;
-var g5 = 783.99;
-var a5 = 880;
-var a5s = 932.33;
-var b5 = 887.77;
-var c6 = 1108.73;
+// var c4 = 277.18;
+// var d4 = 293.66;
+// var e4 = 329.63;
+// var f4 = 369.99;
+// var g4 = 392.00;
+// var a4 = 440.00;
+// var a4s = 466.16;
+// var b4 = 493.88;
+// var c5 = 554.37;
+// var d5 = 587.33;
+// var e5 = 659.25;
+// var f5 = 739.99;
+// var g5 = 783.99;
+// var a5 = 880;
+// var a5s = 932.33;
+// var b5 = 887.77;
+// var c6 = 1108.73;
+
+var c4 = 138.6; //sharp
+var d4 = 146.8;
+var e4 = 164.8;
+var f4 = 185.0; //shap
+var g4 = 196.0;
+var a4 = 220.0;
+var a4s = 233.1;
+var b4 = 246.9;
+var c5 = 277.2; //shsrp
+var d5 = 293.7;
+var e5 = 329.6;
+var f5 = 369.99; //sharp
+var g5 = 392.0;
+var a5 = 440;
+var a5s = 466.2;
+var b5 = 493.9;
+var c6 = 554.4; //sharp
 
 var wn = 1558.44156;
 var dwn = wn*1.5;
+var hn = wn/2;
+var dhn = hn*1.5
 var qn = wn/4;
 var dqn = qn*1.5;
 var en = wn/8;
@@ -142,74 +162,208 @@ var dsn = sn*1.5;
 
 
 var notes = {
-    1: pause,
-    2: 440,
-    3: 293.6,
-    4: 329.6,
-    5: 349.2,
-    6: 349.2,
-    7: 329.6, // 
-    8: 329.6,
-    9: pause,
-    10: 329.6,
-    11: pause,
-    12: 329.6,
-    13: 293.6,
-    14: 293.6,
-    15: 261.6,// 
-    16: 261.6,
-    17: pause,
-    18: 261.6,
-    19: 0,
-    20: 293.6,
-    21: 391.9,
-    22: 440,
-    23: pause,
-    24: pause,
-    25: pause,
-    26: 293.6,
-    27: 391.9,
-    28: 440,
-    29: pause,
+    1: b5,
+    2: pause,
+    3: pause,
+    4: a5s,
+    5: pause,
+    6: f4,
+    7: d5,  
+    8: d5,
+    9: d5,
+    10:d5,
+    11: b4,
+    12: b4,
+    13: b4,
+    14: d5,
+    15: d5, 
+    16: d5,
+    17: d5,
+    18: b4,
+    19: b4,
+    20: c5,
+    21: c5,
+    22: c5,
+    23: c5,
+    24: a4s,
+    25: a4s,
+    26: a4s,
+    27: c5,
+    28: c5,
+    29: c5,
+    30: c5,//30
+    31: a4s,
+    32: b4,
+    33: d5,
+    34: d5,
+    35: d5,
+    36: d5,
+    37: b4,
+    38: b4,
+    39: d5,
+    40: d5,
+    41: d5,
+    42: d5,
+    43: b4,
+    44: b4,
+    45: b4,
+    46: c5,
+    47: c5,
+    48: c5,
+    49: c5,
+    50: a4s,
+    51: a4s,
+    52: a4s,
+    53: c5,
+    54: c5,
+    55: c5,
+    56: c5,
+    57: a4s,
+    58: a5s,
+    59: b5,
+    60: a5,
+    61: g5,
+    62: e5,//60
+    63: f5,
+    64: e5,
+    65: b5,
+    66: b5,
+    67: a5,
+    68: g5,
+    69: e5,
+    70: f5,
+    71: a5s,
+    72: b5,
+    73: pause,
+    74: e5,
+    75: f5,
+    76: e5,
+    77: d5,
+    78: b4,
+    79: pause,
+    80: e5,
+    81: d5,
+    82: e5,
+    83: d5,
+    84: e5,
+    85: d5,
+    86: e5,
+    87: d5,
 }
 
-// var time = {
-//     1: dp1,
-//     2: en,
-//     3: en,
-//     4: en,
-//     5: qn,
-//     6: den,
-//     7: sn,//
-//     8: sn,
-//     9: dp2,
-//     10: en,
-//     11: dp1,
-//     12: en,
-//     13: qn,
-//     14: den,
-//     15: sn,//
-//     16: dp2,
-//     17: en,
-//     18: dp1,
-//     19: en,
-//     20: den,
-//     21: qn,
-//     22: dp2,
-//     23: sp,
-//     24: dp1,
-//     25: en,
-//     26: den,
-//     27: qn,
-//     28: dp2,
-// }
+
+var time = {
+    1: hn,
+    2: hn,
+    3: wn,
+    4: hn,
+    5: dhn,
+    6: qn,//start of x2
+    7: qn,
+    8: en,
+    9: en,
+    10: (hn),
+    11: en,
+    12: en,
+    13: qn,
+    14: qn,
+    15: en,
+    16: en,
+    17: hn,
+    18: en,
+    19: en,//end of x2
+    20: qn,
+    21: qn,
+    22: en,
+    23: en,
+    24: hn,
+    25: en,
+    26: en,
+    27: qn,
+    28: qn,
+    29: en,
+    30: en, //30
+    31: hn,
+    32: qn,
+    33: qn,
+    34: qn,
+    35: en,
+    36: en,
+    37: hn,
+    38: qn,
+    39: qn,
+    40: qn,
+    41: en,
+    42: en,
+    43: hn,
+    44: en,
+    45: en,//p1 end
+    46: qn,
+    47: qn,
+    48: en,
+    49: en,
+    50: hn,
+    51: en,
+    52: en,
+    53: qn,
+    54: qn,
+    55: en,
+    56: en,
+    57:dqn,
+    58:dqn,
+    59: hn,
+    60: hn,
+    61: hn,
+    62: qn,
+    63: wn,
+    64: wn,
+    65: qn,
+    66: hn,
+    67: hn,
+    68: hn,
+    69: qn,
+    70: 1558.4,
+    71: 1948, //wn+qn
+    72: qn,
+    73: qn,
+    74: dqn,
+    75: en,
+    76: en,
+    77: en,
+    78: hn,
+    79: qn,
+    80: en,
+    81: en,
+    82: en,
+    83: en,
+    84: en,
+    85: en, 
+    86: en,
+    87: en,
+}
 
 
-document.getElementById('btn').addEventListener('click', function(){
+var element = document.getElementById("words");
+
+var btn = document.getElementById("btn");
+
+
+function moveWords(){
   
-    document.getElementById('parentDiv').style.animation = "reveal 0.9s 0.9s"
-    
-    document.getElementById('parentDiv').style.animation = "slidein 1s 1s"
-     
-     
-   })
+  element.classList.remove("run-animation");
+ 
+  void element.offsetWidth;
+  
+  element.classList.add("run-animation");
+};
+
+
+var lyrics = ["I" ,"wake", "up" ,"to" ,"the" ,'sounds' ,"of", 'the', "silence", 'that', "allows",
+    "For", "my", "mind" ,"to","run", "around" ]
+
+
+
+    // function background() {
+    //     var audio = new Audio('background.mp3');
+    //     audio.play();
+    //   }
