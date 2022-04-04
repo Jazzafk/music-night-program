@@ -14,13 +14,14 @@ var nextNotetime = audioContext.currentTime;
 
 function repeat() {
 
-    if (num < 88) {
+    if (num < 90) {
         var timeOut = setTimeout(() => {
             sound((notes[num]), time[num])
             moveBars(notes[num])
             moveWords(num)
             num = num + 1
             repeat()
+            console.log(num)
         }, time[num - 1])
     }
 }
@@ -211,7 +212,7 @@ var notes = {
     55: c5,
     56: c5,
     57: a4s,
-    58: a5s,
+    58: pause,//note a5s
     59: b5,
     60: a5,
     61: g5,
@@ -240,7 +241,9 @@ var notes = {
     84: e5,
     85: d5,
     86: e5,
-    87: d5,//end of line 2
+    87: d5,//end of line 2 ED
+    88: e5,
+    89: d5
 }
 
 
@@ -302,7 +305,7 @@ var time = {
     55: en,
     56: en,
     57: dqn,
-    58: dqn,
+    58: dqn*2,//note
     59: hn,
     60: hn,
     61: hn,
@@ -332,6 +335,8 @@ var time = {
     85: en,
     86: en,
     87: en,//end of line 2
+    88: en,
+    89: en,
 }
 
 var element = document.getElementById("words");
@@ -356,13 +361,13 @@ function moveWords(pos) {
 var lyrics = ["I", "wake up", "to", "the", 'sounds', "of", 'the', "silence", "silence", 'that', "allows", "allows",
     "For", "my", "mind", "to", "run", "around", "around", "with", "my", "ear", "up", "to", "the", "ground",
     "I'm", "searching", "searching", "to", "behold", "behold", "the", 'stories', 'stories', 'that', 'are', "told", 'When', "my", "back", "is",
-    "to", 'the', "world", "that", "was", "smiling", "smiling", "when", "I", "turned.", //good
-    'They', "tell", "you", "you're", "the", "greatest", "greatest",
+    "to", 'the', "world", "that", "was", "smiling", "smiling", "when", "I", "turned.", "turned.",//good
+    //'They',
+     "tell", "you", "you're", "the", "greatest", "greatest",
     "But", "once", "you", "turn", "they", "hate", "hate", "us",//good
     "Oh,", "Oh,", "the", "misery", "misery", "misery",
-    "Everybody", "Everybody", "Everybody", "Everybody", "wants", "to", 'be', "my", "enemy",
-    "Spare", "the", "sympathy",
-    "Everybody", "wants", "to", 'be', "my", "enemy",]
+    "Everybody", "Everybody", "Everybody", "Everybody", "wants", "to", 'be', "my", "enemy","enemy","enemy","enemy",
+    ]
 
 
 
