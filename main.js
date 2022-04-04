@@ -240,7 +240,7 @@ var notes = {
     84: e5,
     85: d5,
     86: e5,
-    87: d5,
+    87: d5,//end of line 2
 }
 
 
@@ -331,7 +331,7 @@ var time = {
     84: en,
     85: en,
     86: en,
-    87: en,
+    87: en,//end of line 2
 }
 
 var element = document.getElementById("words");
