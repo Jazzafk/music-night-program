@@ -14,7 +14,7 @@ var nextNotetime = audioContext.currentTime;
 
 function repeat() {
 
-    if (num < 90) {
+    if (num < 95) {
         var timeOut = setTimeout(() => {
             sound((notes[num]), time[num])
             moveBars(notes[num])
@@ -243,7 +243,11 @@ var notes = {
     86: e5,
     87: d5,//end of line 2 ED
     88: e5,
-    89: d5
+    89: d5,
+    90: a5,
+    91: pause,
+    92: a5,
+    93: pause,
 }
 
 
@@ -337,6 +341,10 @@ var time = {
     87: en,//end of line 2
     88: en,
     89: en,
+    90: hn,
+    91: wn,
+    92: qn,
+    93: wn,
 }
 
 var element = document.getElementById("words");
