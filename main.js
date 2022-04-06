@@ -1,7 +1,7 @@
 var startBtn = document.getElementById('start')
 var stopBtn = document.getElementById('stop')
 var start2 = document.getElementById('start2')
-num = 1;
+num = 1;//93
 
 document.getElementById('reset').addEventListener('click', function () {
     location.reload()
@@ -14,7 +14,7 @@ var nextNotetime = audioContext.currentTime;
 
 function repeat() {
 
-    if (num < 95) {
+    if (num < 154) {
         var timeOut = setTimeout(() => {
             sound((notes[num]), time[num])
             moveBars(notes[num])
@@ -238,7 +238,7 @@ var notes = {
     81: d5,
     82: e5,
     83: d5,
-    84: e5,
+    84: e5,//e5
     85: d5,
     86: e5,
     87: d5,//end of line 2 ED
@@ -248,6 +248,81 @@ var notes = {
     91: pause,
     92: a5,
     93: pause,
+    94: e5,
+    95: f5,
+    96: e5,
+    97: d5,
+    98: b4,//mabye b5
+    99:pause,
+    100: e5,
+    101: d5,
+    102: e5,
+    103: d5,
+    104: e5,
+    105: d5,
+    106: a5,
+    107: pause,
+    108: b4,
+    109: b4,
+    110: b4,
+    111: d5,//blended quarter notes
+    112: pause,
+    113: c5,
+    114: pause,
+    115: b4,
+    116: pause,
+    117: f4,
+    118: e4,
+
+    119: pause,//idkkkk
+
+    //120: pause,
+    120: f5,
+    121: b5,
+    122: f5,
+    123: f5,
+    124: f5,
+
+    125: pause,
+
+    126: b4,
+    127: b4,
+    128: b4,
+    129: d5,
+    130: pause,
+    131: c5,
+    132: pause,
+    133: b4,
+    134: pause,
+    135: f4,
+    136: e4,//end of linr 3
+
+    137: pause,
+
+    138: f5,
+    139: b5,
+    140: f5,
+    141: f5,
+    142: f5,//" look out for yourself"
+
+    143: pause,
+    144: b4,
+    145: b4,
+    146: b4,
+    147: d5,
+
+
+
+    //148: c4,
+
+    // 149: d5,
+    // 150: d5,
+    // 151: d5,
+
+    //152: d5,
+    // 153: b4,
+    // 154: b4,
+    // 155: b4,
 }
 
 
@@ -309,9 +384,9 @@ var time = {
     55: en,
     56: en,
     57: dqn,
-    58: dqn*2,//note
-    59: hn,
-    60: hn,
+    58: dqn,//note dqn*2
+    59: den,//hn
+    60: dqn,//hn
     61: hn,
     62: qn,
     63: wn,
@@ -322,9 +397,9 @@ var time = {
     68: hn,
     69: qn,
     70: 1558.4,
-    71: 1948, //wn+qn
+    71: qn, //wn+qn 1948
     72: qn,
-    73: qn,
+    73: dqn,//qn
     74: dqn,
     75: en,
     76: en,
@@ -334,7 +409,7 @@ var time = {
     80: en,
     81: en,
     82: en,
-    83: en,
+    83: en,//en
     84: en,
     85: en,
     86: en,
@@ -342,13 +417,85 @@ var time = {
     88: en,
     89: en,
     90: hn,
-    91: wn,
+    91: dqn,//long pause whole note
     92: qn,
-    93: wn,
+    93: dqn,//long pause whole note
+    94: qn,//dqn
+    95: en,
+    96: en,
+    97: en,
+    98: hn,
+    99: dqn,//wn
+    100: en,
+    101: en,
+    102: en,
+    103: en,
+    104: en,
+    105: en,
+    106: qn,
+    107: qn,//dwh
+    108: en,
+    109: en,
+    110: en,
+    111: dqn,//blended quarter notes
+    112: en,//whole note pause
+    113: qn,
+    114: en,//whole note pause
+    115: qn,
+    116: en,//whole note pause
+    117: en,
+    118: qn,
+
+    119: hn,//whole note rest
+    120: en,
+    121: qn,
+    122: sn,
+    123: sn,
+    124: qn,//'look out for yourself
+
+    125: en,///idkkk
+    126: en,
+    127: en,
+    128: en,
+    129: dqn,
+    130: en,//whole note pause
+    131: qn,
+    132: en,//whole note pause
+    133: qn,
+    134: en,//whole note pause
+    135: en,
+    136: qn,//end of line 3
+
+    137: hn,//whole note rest
+    138: en,
+    139: qn,
+    140: sn,
+    141: sn,
+    142: qn,//"look out for yourself"
+
+    143: hn,//whole note pause
+    144: en,
+    145: en,
+    146: en,
+    147: qn,
+
+
+    //148: en,
+
+    // 149: qn,
+    // 150: qn,
+    // 151: en,
+
+    // 152: en,
+    // 153: hn,
+    // 154: en,
+    // 155: en,
+
+
 }
 
 var element = document.getElementById("words");
-num2 = 0
+num2 = 0//86
 
 function moveWords(pos) {
 
@@ -374,7 +521,16 @@ var lyrics = ["I", "wake up", "to", "the", 'sounds', "of", 'the', "silence", "si
      "tell", "you", "you're", "the", "greatest", "greatest",
     "But", "once", "you", "turn", "they", "hate", "hate", "us",//good
     "Oh,", "Oh,", "the", "misery", "misery", "misery",
-    "Everybody", "Everybody", "Everybody", "Everybody", "wants", "to", 'be', "my", "enemy","enemy","enemy","enemy",
+    "Everybody", "Everybody", "Everybody", "Everybody", "wants", "to", 'be', "my","my", "enemy","enemy","enemy","enemy","enemy","enemy",
+
+
+  
+'Spare','the', 'sympathy', 'sympathy','sympathy',
+'Everybody','Everybody', 'Everybody','Everybody','wants', 'to', 'be','be','be', 'my', 'enemy','enemy','enemy','-y',' ','-y', '','-y','-y','-y',
+'Look out for yourself!','Look out for yourself!','Look out for yourself!','Look out for yourself!','Look out for yourself!','Look out for yourself!',''
+,'my', 'enemy','enemy','enemy','-y',' ','-y', '','-y','-y','-y','-y',
+'Look out for yourself!','Look out for yourself!','Look out for yourself!','Look out for yourself!','Look out for yourself!',
+'but', 'im', 'ready', 'ready', 'Code by Jazz Stocker-Witterick'
     ]
 
 
